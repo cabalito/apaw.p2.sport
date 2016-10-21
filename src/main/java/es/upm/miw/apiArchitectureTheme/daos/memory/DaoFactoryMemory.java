@@ -1,0 +1,31 @@
+package es.upm.miw.apiArchitectureTheme.daos.memory;
+
+import es.upm.miw.apiArchitectureTheme.daos.DaoFactory;
+import es.upm.miw.apiArchitectureTheme.daos.SportDao;
+import es.upm.miw.apiArchitectureTheme.daos.UserDao;
+
+public class DaoFactoryMemory extends DaoFactory {
+
+	private SportDao sportDao;
+	private UserDao usesrDao;
+
+	public DaoFactoryMemory() {
+	}
+
+	@Override
+	public SportDao getSportDao() {
+		if (sportDao == null) {
+			sportDao = new SportDaoMemory();
+		}
+		return sportDao;
+	}
+
+	@Override
+	public UserDao getUserDao() {
+		if (usesrDao == null) {
+			usesrDao = new UserDaoMemory();
+		}
+		return usesrDao;
+	}
+
+}
