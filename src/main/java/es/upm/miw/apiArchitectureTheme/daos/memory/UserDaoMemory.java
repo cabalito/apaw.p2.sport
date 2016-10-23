@@ -1,10 +1,10 @@
 package es.upm.miw.apiArchitectureTheme.daos.memory;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import es.upm.miw.apiArchitectureTheme.daos.UserDao;
+import es.upm.miw.apiArchitectureTheme.entities.Sport;
 import es.upm.miw.apiArchitectureTheme.entities.User;
 
 public class UserDaoMemory extends GenericMemoryDao<User> implements UserDao {
@@ -24,15 +24,19 @@ public class UserDaoMemory extends GenericMemoryDao<User> implements UserDao {
 	}
 
 	@Override
-	public List<Integer> findValueByUserId(int id) {
-		List<User> users = this.findAll();
-		List<Integer> usersValue = new ArrayList<>();
-		for (User user : users) {
-			if (user.getUser().getId() == id) {
-				usersValue.add(user.getValue());
+	public User findValueByNick(String nick) {
+		List<User> userList = this.findAll();
+		for (User user : userList) {
+			if (user.getNick().equals(nick)) {
+				return user;
 			}
 		}
-		return usersValue;
+		return null;
+	}
+
+	@Override
+	public void insertSport(User user) {
+		this.update(user);
 	}
 
 }

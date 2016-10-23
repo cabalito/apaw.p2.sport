@@ -1,36 +1,49 @@
 package es.upm.miw.apiArchitectureTheme.wrappers;
 
+import java.util.List;
+
+import es.upm.miw.apiArchitectureTheme.entities.Sport;
+
 public class UserWrapper {
-	private String sportName;
-	private int userValue;
+	private String nick;
+	private String email;
+	private List<Sport> sports;
 
 	public UserWrapper() {
 	}
 
-	public UserWrapper(String sportName, int userValue) {
-		this.sportName = sportName;
-		this.userValue = userValue;
+	public UserWrapper(String nick, String email) {
+		this.nick = nick;
+		this.email = email;
 	}
 
-	public String getSportName() {
-		return sportName;
+	public String getNick() {
+		return nick;
 	}
 
-	public void setSportName(String sportName) {
-		this.sportName = sportName;
+	public void setNick(String nick) {
+		this.nick = nick;
 	}
 
-	public int getUserValue() {
-		return userValue;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setUserValue(int userValue) {
-		this.userValue = userValue;
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	public List<Sport> getSports() {
+		return sports;
+	}
+
+	public void setSports(List<Sport> sports) {
+		this.sports = sports;
 	}
 
 	@Override
 	public String toString() {
-		return "{\"sportName\":\"" + sportName + ",\"userValue\":" + userValue + "}";
+		return "{\"nick\":\"" + nick + ",\"email\":" + email + "}";
 	}
 
 }

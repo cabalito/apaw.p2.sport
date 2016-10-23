@@ -9,7 +9,7 @@ public class UserListWrapper {
 	public UserListWrapper() {
 	}
 	
-	public List<UserWrapper> getVoteList() {
+	public List<UserWrapper> getUserList() {
 		return userList;
 	}
 

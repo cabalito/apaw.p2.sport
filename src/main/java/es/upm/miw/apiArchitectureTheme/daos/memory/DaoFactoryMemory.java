@@ -7,7 +7,7 @@ import es.upm.miw.apiArchitectureTheme.daos.UserDao;
 public class DaoFactoryMemory extends DaoFactory {
 
 	private SportDao sportDao;
-	private UserDao usesrDao;
+	private UserDao userDao;
 
 	public DaoFactoryMemory() {
 	}
@@ -22,10 +22,10 @@ public class DaoFactoryMemory extends DaoFactory {
 
 	@Override
 	public UserDao getUserDao() {
-		if (usesrDao == null) {
-			usesrDao = new UserDaoMemory();
+		if (userDao == null) {
+			userDao = new UserDaoMemory();
 		}
-		return usesrDao;
+		return userDao;
 	}
 
 }
